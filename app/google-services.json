@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "966814648084",
+    "firebase_url": "https://aula-1e042.firebaseio.com",
+    "project_id": "aula-1e042",
+    "storage_bucket": "aula-1e042.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:966814648084:android:e3717aa2be94ce30926401",
+        "android_client_info": {
+          "package_name": "br.ifsc.edu.aulagustavo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "966814648084-f7e80oqqq4qvtl91lhlreq60gns292v4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "br.ifsc.edu.aulagustavo",
+            "certificate_hash": "bec76724069a30dd491ec36d7ee0be808b79c941"
+          }
+        },
+        {
+          "client_id": "966814648084-2kgrk1jebdbjk8g0oelcjl0igu5n56ib.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAMFOhLI5pFcLia_PplZncslXeCDU3ehhA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "966814648084-2kgrk1jebdbjk8g0oelcjl0igu5n56ib.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
