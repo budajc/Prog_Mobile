@@ -57,6 +57,8 @@ public class Notas extends AppCompatActivity {
             }
         });
 
+
+
         Cursor cursor= bd.rawQuery("SELECT * FROM notas",null,null);
         cursor.moveToFirst();
 
@@ -83,6 +85,25 @@ public class Notas extends AppCompatActivity {
         }
 
         listView = findViewById(R.id.listview);
+
+        FloatingActionButton fab2 = findViewById(R.id.fab2);
+        fab2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+
+            Intent restart = new Intent(Notas.this, Notas.class);
+
+            startActivity(restart);
+
+            bd.execSQL("Drop table 'notas';");
+
+            finish();
+
+            }
+        });
+
+
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(
                 getApplicationContext(),
@@ -116,12 +137,11 @@ public class Notas extends AppCompatActivity {
 
         while(!cursor.isAfterLast()){
 
-            //id = cursor.getString(cursor.getColumnIndex("id"));
+            id = cursor.getString(cursor.getColumnIndex("id"));
             titulo= cursor.getString(cursor.getColumnIndex("titulo"));
-            //texto = cursor.getString(cursor.getColumnIndex("texto"));
+            texto = cursor.getString(cursor.getColumnIndex("texto"));
 
             //Log.d("Tabela notas", id +" "+ titulo +" "+ texto);
-            arrayList.add(titulo);
             cursor.moveToNext();
         }
 

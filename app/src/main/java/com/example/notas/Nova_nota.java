@@ -29,26 +29,39 @@ public class Nova_nota extends AppCompatActivity {
         bd = openOrCreateDatabase("meubd",MODE_PRIVATE,null);
 
         FloatingActionButton fab = findViewById(R.id.flot);
+        final EditText txt1;
+        final EditText txt2;
 
-        final EditText txt1 = findViewById(R.id.txt1);
-        final EditText txt2 = findViewById(R.id.txt2);
+
+        txt1 = findViewById(R.id.txt1);
+        txt2 = findViewById(R.id.txt2);
 
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
+
                 String t1 = txt1.getText().toString();
                 String t2 = txt2.getText().toString();
 
-                ContentValues contentValues = new ContentValues();
-                contentValues.put("titulo",t1);
-                contentValues.put("texto",t2);
+                if (t1.equalsIgnoreCase("") || t2.equalsIgnoreCase("")) {
 
-                bd.insert("notas", null, contentValues);
+                    Toast.makeText(Nova_nota.this, "Preencha os Campos", Toast.LENGTH_SHORT).show();
 
-                finish();
+                } else {
+                    ContentValues contentValues = new ContentValues();
+                    contentValues.put("titulo", t1);
+                    contentValues.put("texto", t2);
 
-                Toast.makeText(Nova_nota.this,"Concluido com sucesso",Toast.LENGTH_SHORT).show();
+                    bd.insert("notas", null, contentValues);
+
+                    finish();
+
+                    Toast.makeText(Nova_nota.this, "Concluido com sucesso", Toast.LENGTH_SHORT).show();
+
+                    t1 = null;
+                    t2 = null;
+                }
             }
         });
 

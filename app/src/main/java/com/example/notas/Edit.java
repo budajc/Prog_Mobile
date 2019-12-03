@@ -40,17 +40,25 @@ public class Edit extends AppCompatActivity {
                 String t2 = txt2.getText().toString();
                 String id = id_ed.getText().toString();
 
+                if (id.equalsIgnoreCase("")){
 
-                ContentValues contentValues = new ContentValues();
-                contentValues.put("titulo",t1);
-                contentValues.put("texto",t2);
+                    Toast.makeText(Edit.this, "Preencha o campo ID", Toast.LENGTH_SHORT).show();
 
-                bd.update("notas", contentValues , "id = "+id,null);
+                }else{
+                    ContentValues contentValues = new ContentValues();
+                    contentValues.put("titulo", t1);
+                    contentValues.put("texto", t2);
 
-                finish();
+                    bd.update("notas", contentValues, "id = " + id, null);
 
-                Toast.makeText(Edit.this,"Concluido com sucesso",Toast.LENGTH_SHORT).show();
 
+                    Toast.makeText(Edit.this, "Concluido com sucesso", Toast.LENGTH_SHORT).show();
+
+                    t1 = null;
+                    t2 = null;
+
+                    finish();
+                }
             }
         });
     }
