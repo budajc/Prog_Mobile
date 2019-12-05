@@ -15,6 +15,7 @@ import androidx.appcompat.widget.Toolbar;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -53,6 +54,7 @@ public class Notas extends AppCompatActivity {
 
                 Intent intent = new Intent(Notas.this,Nova_nota.class);
                 startActivity(intent);
+                finish();
 
             }
         });
@@ -122,6 +124,7 @@ public class Notas extends AppCompatActivity {
 
                 Intent intent = new Intent(Notas.this,Edit.class);
                 startActivity(intent);
+                finish();
 
             }
         });

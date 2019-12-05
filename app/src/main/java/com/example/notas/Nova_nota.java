@@ -1,6 +1,7 @@
 package com.example.notas;
 
 import android.content.ContentValues;
+import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 
@@ -55,12 +56,17 @@ public class Nova_nota extends AppCompatActivity {
 
                     bd.insert("notas", null, contentValues);
 
-                    finish();
+                    Intent restart = new Intent(Nova_nota.this, Notas.class);
+
+                    startActivity(restart);
 
                     Toast.makeText(Nova_nota.this, "Concluido com sucesso", Toast.LENGTH_SHORT).show();
 
                     t1 = null;
                     t2 = null;
+
+                    finish();
+
                 }
             }
         });

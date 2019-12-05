@@ -1,6 +1,7 @@
 package com.example.notas;
 
 import android.content.ContentValues;
+import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -56,6 +57,10 @@ public class Edit extends AppCompatActivity {
 
                     t1 = null;
                     t2 = null;
+
+                    Intent restart = new Intent(Edit.this, Notas.class);
+
+                    startActivity(restart);
 
                     finish();
                 }
